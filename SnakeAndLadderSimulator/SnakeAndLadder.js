@@ -1,7 +1,28 @@
 //Initialized with start position 0
-const startPosition=0
-console.log(startPosition)
+const START_POSITION = 0;
+let currentPosition = 0;
+const SNAKE = 0;
+const LADDER = 1;
+console.log("Start position :" + START_POSITION);
 
 //Generate random die number
-let dieNumber = Math.floor((Math.random() * 6) + 1)
-console.log(dieNumber)
+let dieNumber = Math.floor(Math.random() * 6 + 1);
+console.log("Die generated : " + dieNumber);
+
+//Decide player move
+let move = Math.floor(Math.random() * 2);
+console.log("Move decider :" + move);
+
+//Update current position
+switch (move) {
+  case LADDER:
+    currentPosition = currentPosition + dieNumber;
+    break;
+  case SNAKE:
+    if (currentPosition - dieNumber < 0) currentPosition = START_POSITION;
+    else currentPosition = currentPosition - dieNumber;
+    break;
+  default:
+    break;
+}
+console.log("Current Position after move : " + currentPosition);
