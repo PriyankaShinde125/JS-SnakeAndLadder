@@ -9,6 +9,11 @@ console.log("Start position :" + START_POSITION);
 
 //Play until win
 while (currentPosition <= WINNING_POSITION) {
+  play();
+}
+console.log("Current Position after move : " + currentPosition);
+
+function play() {
   //Generate random die number
   let dieNumber = Math.floor(Math.random() * 6 + 1);
   console.log("Die generated : " + dieNumber);
@@ -30,4 +35,3 @@ while (currentPosition <= WINNING_POSITION) {
       break;
   }
 }
-console.log("Current Position after move : " + currentPosition);
