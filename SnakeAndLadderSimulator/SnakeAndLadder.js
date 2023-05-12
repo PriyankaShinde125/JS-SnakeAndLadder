@@ -8,7 +8,7 @@ let currentPosition = 0;
 console.log("Start position :" + START_POSITION);
 
 //Play until win
-while (currentPosition <= WINNING_POSITION) {
+while (currentPosition < WINNING_POSITION) {
   play();
 }
 console.log("Current Position after move : " + currentPosition);
@@ -26,6 +26,9 @@ function play() {
   switch (move) {
     case LADDER:
       currentPosition = currentPosition + dieNumber;
+      //Check that reach to exact winning position
+      if (currentPosition > WINNING_POSITION)
+        currentPosition = currentPosition - dieNumber;
       break;
     case SNAKE:
       if (currentPosition - dieNumber < 0) currentPosition = START_POSITION;
