@@ -7,6 +7,8 @@ const WINNING_POSITION = 100;
 let currentPosition = 0;
 console.log("Start position :" + START_POSITION);
 
+let positionArray = [];
+
 //Play until win
 while (currentPosition < WINNING_POSITION) {
   play();
@@ -37,4 +39,6 @@ function play() {
     default:
       break;
   }
+
+  positionArray.push(currentPosition);
 }
