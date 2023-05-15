@@ -11,15 +11,6 @@ let player2Position = currentPosition;
 
 let positionArray = [];
 let player = 1;
-class PlayerRecord {
-  constructor(position, player) {
-    this.position = position;
-    this.player = player;
-  }
-  toString() {
-    return "Position : " + this.position + "Player : " + this.player;
-  }
-}
 
 //Play until win with two player
 while (
